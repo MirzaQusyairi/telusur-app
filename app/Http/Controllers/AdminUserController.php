@@ -13,7 +13,7 @@ class AdminUserController extends Controller
         return view('admin.user.index', ['data' => $data]);
     }
 
-    public function create_view(){
+    public function create(){
         return view('admin.user.create');
     }
 

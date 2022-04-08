@@ -59,7 +59,7 @@
             </ul>
           </li> --}}
           <li class="nav-item">
-            <a href="{{ route('Dashboard Admin') }}" class="nav-link">
+            <a href="{{ route('Dashboard Admin') }}" class="nav-link {{ Request::is('admin') ? 'active':'' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -67,7 +67,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('Manage Users') }}" class="nav-link">
+            <a href="{{ route('Manage Users') }}" class="nav-link {{ Request::is('admin/users*') ? 'active':'' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 User
@@ -75,7 +75,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('Manage Posts') }}" class="nav-link">
+            <a href="{{ route('Manage Posts') }}" class="nav-link {{ Request::is('admin/posts*') ? 'active':'' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Posts
