@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [PostController::class, 'index'])->name('posts');
-Route::get('/post/{post:slug}', [PostController::class, 'show'])->name('show');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('show');
 
 
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('Dashboard Admin');
@@ -31,6 +31,5 @@ Route::get('/admin/users', [AdminUserController::class, 'index'])->name('Manage 
 Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('Create User');
 Route::post('/admin/users/create', [AdminUserController::class, 'store'])->name('Store Data User');
 
-Route::get('/admin/posts', [AdminPostController::class, 'index'])->name('Manage Posts');
-Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->name('Create Post');
-Route::post('/admin/posts/create', [AdminPostController::class, 'store'])->name('Store Data Post');
+Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
+Route::resource('/admin/posts', AdminPostController::class);

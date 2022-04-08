@@ -75,7 +75,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('Manage Posts') }}" class="nav-link {{ Request::is('admin/posts*') ? 'active':'' }}">
+            <a href="/admin/posts" class="nav-link {{ Request::is('admin/posts*') ? 'active':'' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Posts

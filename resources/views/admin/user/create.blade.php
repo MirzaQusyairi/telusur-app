@@ -1,6 +1,6 @@
 @extends('admin.admin')
 
-@section('page_name', 'Create User')
+@section('page_name', 'Create New User')
 @section('content')
     <div class="row">
         <div class="col-md-6">

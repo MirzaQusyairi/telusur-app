@@ -11,8 +11,21 @@
     <title>Telusur</title>
   </head>
   <body>
-    <h1>{{$post->title}}</h1>
-    <p>{!! $post->body !!}</p>
+    <div class="container">
+      <div class="row justify-content-center mt-3">
+        <div class="col-lg-8">
+          <h1 class="font-weight-bold">{{ $post->title }}</h1>
+
+          <p>By. <a href="#" class="text-decoration-none">MirzaQusyairi</a></p>
+
+          <img src="https://source.unsplash.com/1200x400?pariwisata" alt="" class="img-fluid">
+
+          <article class="my-3 fs-5 text-justify">
+            {!! $post->body !!}
+          </article>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

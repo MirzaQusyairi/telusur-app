@@ -12,7 +12,7 @@
           </div>
         @endif --}}
         <div class="col-12">
-            <a href="{{ route('Create User') }}" type="button" class="btn btn-primary">Create User</a>
+            <a href="{{ route('Create User') }}" type="button" class="btn btn-primary">Create New User</a>
         </div>
     </div>
     <div class="row">

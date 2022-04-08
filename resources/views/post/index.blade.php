@@ -124,26 +124,26 @@
       
         <div class="album py-5 bg-light">
           <div class="container">
-      
             <div class="row">
+
               @foreach ($posts as $post)
-              <div class="col-md-6">
-                <a href="{{ route('show', $post->slug )}}" style="text-decoration: none; color:black">
-                    <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        
-                    <div class="card-body">
-                        <h6 class="font-weight-bold">{{ $post->title }}</h6>
-                        <p class="card-text text-justify">{!! Str::limit($post->body, 150, $end='...') !!}</p>
-                        {{-- <p class="card-text">{!! $post->body !!}</p> --}}
-                        <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">9 mins</small>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-              </div>
-            @endforeach
+                <div class="col-md-6">
+                  <a href="{{ route('show', $post->slug )}}" style="text-decoration: none; color:black">
+                      <div class="card mb-4 shadow-sm">
+                      {{-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> --}}
+                      <img src="https://source.unsplash.com/225x100?mountain" alt="" class="img-fluid">
+          
+                      <div class="card-body">
+                          <h6 class="font-weight-bold">{{ $post->title }}</h6>
+                          <p class="card-text text-justify">{!! Str::limit(strip_tags($post->body), 150, '...') !!}</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                          <small class="text-muted">9 mins</small>
+                          </div>
+                      </div>
+                      </div>
+                  </a>
+                </div>
+              @endforeach
               <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                   <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
