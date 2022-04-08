@@ -37,15 +37,6 @@ class AdminPostController extends Controller
      */
     public function store(Request $request)
     {
-        // $post = new Post(); 
-        // $post->thumbnail = "/img/namafilegambar.jpg";
-        // $post->title = $request->title;
-        // $post->slug = Str::slug($post->title, '-'); 
-        // $post->body = $request->body;
-        // $post->save();
-        
-        // return back();
-
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
@@ -101,7 +92,9 @@ class AdminPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect('/admin/posts')->with('success', 'Post has been deleted');
     }
 
     public function checkSlug(Request $request){

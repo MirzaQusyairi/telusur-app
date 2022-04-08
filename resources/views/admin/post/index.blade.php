@@ -42,7 +42,11 @@
                     <td>
                       <a href="/admin/posts/{{ $dt->slug }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                       <button type="button" class="btn btn-warning"><i class="fa fa-pen"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                      <form action="/admin/posts/{{ $dt->slug }}" method="POST" class="d-inline">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" onclick="return confirm('Are you sure ?');"><i class="fa fa-trash"></i></button>
+                      </form>
                     </td>
                   </tr>
                   @endforeach
@@ -55,6 +59,27 @@
           </div>
           <!-- /.col -->
         </div>
-    
+
+        <script>
+          // function confirm(){
+          //   Swal.fire({
+          //     title: 'Are you sure?',
+          //     text: "You won't be able to revert this!",
+          //     icon: 'warning',
+          //     showCancelButton: true,
+          //     confirmButtonColor: '#3085d6',
+          //     cancelButtonColor: '#d33',
+          //     confirmButtonText: 'Yes, delete it!'
+          //   }).then((result) => {
+          //     if (result.isConfirmed) {
+          //       Swal.fire(
+          //         'Deleted!',
+          //         'Your post has been deleted.',
+          //         'success'
+          //       )
+          //     }
+          //   })
+          }
+        </script>
 
 @endsection
