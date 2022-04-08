@@ -33,7 +33,10 @@
                   @foreach ($data as $index => $dt)    
                   <tr>
                     <td>{{ $index+1 }}</td>
-                    <td><img src="{{ $dt->thumbnail }}" height="150" width="150"></td>
+                    <td>
+                      {{-- <img src="{{ $dt->thumbnail }}" height="150" width="150"> --}}
+                      <img src="https://source.unsplash.com/150x150?mountain" alt="" class="img-fluid">
+                    </td>
                     <td>{{ $dt->title }}</td>
                     <td>{{ $dt->slug }}</td>
                     <td>

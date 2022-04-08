@@ -54,7 +54,7 @@
                       <label>Role</label>
                       <select class="form-control" id="role" name="role">
                         <option value="administrator">Administrator</option>
-                        <option value="writer">Writer</option>
+                        <option value="writer">Author</option>
                         <option value="staff">Staff</option>
                       </select>
                     </div>
