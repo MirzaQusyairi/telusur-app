@@ -41,7 +41,7 @@
                     <td>{{ $dt->slug }}</td>
                     <td>
                       <a href="/admin/posts/{{ $dt->slug }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
-                      <button type="button" class="btn btn-warning"><i class="fa fa-pen"></i></button>
+                      <a href="/admin/posts/{{ $dt->slug }}/edit" class="btn btn-warning"><i class="fa fa-pen"></i></a>
                       <form action="/admin/posts/{{ $dt->slug }}" method="POST" class="d-inline">
                         @method('DELETE')
                         @csrf

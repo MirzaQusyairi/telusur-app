@@ -1,6 +1,6 @@
 @extends('admin.admin')
 
-@section('page_name', 'Create New Post')
+@section('page_name', 'Edit Post')
 @section('content')
   <div class="row">
     <div class="col-md-12">
@@ -9,13 +9,14 @@
             <h3 class="card-title"></h3>
           </div>
 
-          <form action="/admin/posts" method="POST">
+          <form action="/admin/posts/{{ $post->slug }}" method="POST">
+            @method('PUT')
             @csrf
             <div class="card-body">
               
               <div class="form-group">
                 <label for="">Slug</label>
-                <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" placeholder="slug" value="{{ old('name') }}">
+                <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" placeholder="slug" value="{{ old('name', $post->slug) }}">
                 @error('slug')
                   <div class="invalid-feedback">
                     {{ $message }}
@@ -25,7 +26,7 @@
 
               <div class="form-group">
                 <label for="">Judul</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Enter title" value="{{ old('title') }}" autofocus>
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Enter title" value="{{ old('title', $post->title) }}" autofocus>
                 @error('title')
                   <div class="invalid-feedback">
                     {{ $message }}
@@ -36,19 +37,19 @@
               <div class="form-group">
                 <label for="">Isi</label>
                 @error('body')
-                  <div class="text-danger text-sm">
+                  <div class="text-danger">
                     {{ $message }}
                   </div>
                 @enderror
                 <textarea id="body" name="body">
-                  {{ old('body') }}
+                  {{ old('body', $post->body) }}
                 </textarea>
               </div>
 
             </div>
 
             <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Update</button>
             </div>
           </form>
         </div>
