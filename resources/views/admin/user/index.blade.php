@@ -24,8 +24,8 @@
                   <tr>
                     <th>no.</th>
                     <th>name</th>
+                    <th>username</th>
                     <th>email</th>
-                    <th>password</th>
                     <th>phone</th>
                     <th>role</th>
                     <th>action</th>
@@ -36,8 +36,8 @@
                   <tr>
                     <td>{{ $index+1 }}</td>
                     <td>{{ $dt->name }}</td>
+                    <td>{{ $dt->username }}</td>
                     <td>{{ $dt->email }}</td>
-                    <td>{{ $dt->password }}</td>
                     <td>{{ $dt->phone }}</td>
                     <td>{{ $dt->role }}</td>
                     <td>

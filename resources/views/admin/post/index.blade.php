@@ -23,7 +23,7 @@
                   <thead>
                   <tr>
                     <th>no.</th>
-                    <th>thumbnail</th>
+                    <th>image</th>
                     <th>title</th>
                     <th>slug</th>
                     <th>action</th>

@@ -9,7 +9,7 @@
             <h3 class="card-title"></h3>
           </div>
 
-          <form action="/admin/posts" method="POST">
+          <form action="/admin/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
               
@@ -31,6 +31,19 @@
                     {{ $message }}
                   </div>
                 @enderror
+              </div>
+
+              <div class="form-group">
+                <label for="customFile">Gambar Postingan</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input  @error('image') is-invalid @enderror" id="customFile" id="image" name="image">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                  @error('image')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
               </div>
 
               <div class="form-group">

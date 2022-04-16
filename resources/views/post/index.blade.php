@@ -137,7 +137,7 @@
                           <h6 class="font-weight-bold">{{ $post->title }}</h6>
                           <p class="card-text text-justify">{!! Str::limit(strip_tags($post->body), 150, '...') !!}</p>
                           <div class="d-flex justify-content-between align-items-center">
-                          <small class="text-muted">9 mins</small>
+                          <small class="text-muted">By. {{ $post->author->name }}</small>
                           </div>
                       </div>
                       </div>

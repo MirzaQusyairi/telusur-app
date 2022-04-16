@@ -37,13 +37,16 @@ class AdminPostController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request->file('image')->store('post-images');
+
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
+            'image' => 'image',
             'body' => 'required'
         ]);
 
-        $validatedData['thumbnail'] = "/img/namafilegambar.jpg";
+        $validatedData['user_id'] = 1;
 
         Post::create($validatedData);
 

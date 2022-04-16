@@ -16,11 +16,17 @@ class Post extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'thumbnail',
+        'image',
         'title',
         'slug',
         'body',
+        'user_id'
     ];
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function getRouteKeyName()
     {

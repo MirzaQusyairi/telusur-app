@@ -16,7 +16,7 @@
         <div class="col-lg-8">
           <h1 class="font-weight-bold">{{ $post->title }}</h1>
 
-          <p>By. <a href="#" class="text-decoration-none">MirzaQusyairi</a></p>
+          <p>By. <a href="/author/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a></p>
 
           <img src="https://source.unsplash.com/1200x400?pariwisata" alt="" class="img-fluid">
 
