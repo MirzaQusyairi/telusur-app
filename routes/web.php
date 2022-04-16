@@ -33,6 +33,7 @@ Route::get('/admin', [AdminController::class, 'dashboard'])->name('Dashboard Adm
 Route::get('/admin/users', [AdminUserController::class, 'index'])->name('Manage Users');
 Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('Create User');
 Route::post('/admin/users/create', [AdminUserController::class, 'store'])->name('Store Data User');
+Route::delete('/admin/users/{id}', [AdminUserController::class, 'destroy'])->name('Delete Data User');
 
 Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
 Route::resource('/admin/posts', AdminPostController::class);

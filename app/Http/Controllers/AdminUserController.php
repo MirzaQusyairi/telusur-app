@@ -33,4 +33,11 @@ class AdminUserController extends Controller
 
         return redirect('/admin/users')->with('success', 'Create User Successfull!');
     }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+
+        return redirect('/admin/users')->with('success', 'User has been deleted');
+    }
 }
