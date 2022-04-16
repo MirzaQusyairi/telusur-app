@@ -37,8 +37,6 @@ class AdminPostController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->file('image')->store('post-images');
-
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
@@ -46,7 +44,11 @@ class AdminPostController extends Controller
             'body' => 'required'
         ]);
 
-        $validatedData['user_id'] = 1;
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        $validatedData['user_id'] = 2;
 
         Post::create($validatedData);
 

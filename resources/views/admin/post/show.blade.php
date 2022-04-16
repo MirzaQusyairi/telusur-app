@@ -14,7 +14,11 @@
         <button class="btn btn-danger" onclick="return confirm('Are you sure ?');">Delete</button>
       </form>
 
-      <img src="https://source.unsplash.com/1200x400?pariwisata" alt="" class="img-fluid mt-3">
+      @if ($post->image)
+        <img src="{{ asset('storage/' . $post->image) }}" alt="" class="img-fluid mt-3" style=" display: block; max-width:730px; max-height:400px; width: auto; height: auto;">
+      @else
+        <img src="https://source.unsplash.com/1200x400?travel" alt="" class="img-fluid mt-3" style=" display: block; max-width:730px; min-height:400px; width: auto; height: auto;">
+      @endif
 
       <article class="my-3 fs-5 text-justify">
         {!! $post->body !!}

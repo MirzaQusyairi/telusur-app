@@ -17,8 +17,12 @@
           <h1 class="font-weight-bold">{{ $post->title }}</h1>
 
           <p>By. <a href="/author/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a></p>
-
-          <img src="https://source.unsplash.com/1200x400?pariwisata" alt="" class="img-fluid">
+          
+          @if ($post->image)
+            <img src="{{ asset('storage/' . $post->image) }}" alt="" class="img-fluid" style=" display: block; max-width:730px; max-height:400px; width: auto; height: auto;">
+          @else
+            <img src="https://source.unsplash.com/1200x400?travel" alt="" class="img-fluid" style=" display: block; max-width:730px; min-height:400px; width: auto; height: auto;">
+          @endif
 
           <article class="my-3 fs-5 text-justify">
             {!! $post->body !!}

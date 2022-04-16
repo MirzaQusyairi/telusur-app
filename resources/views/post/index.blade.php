@@ -131,7 +131,11 @@
                   <a href="{{ route('show', $post->slug )}}" style="text-decoration: none; color:black">
                       <div class="card mb-4 shadow-sm">
                       {{-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> --}}
-                      <img src="https://source.unsplash.com/225x100?mountain" alt="" class="img-fluid">
+                      @if ($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="" class="img-fluid" style=" display: block; max-width:540px; max-height:250px; width: auto; height: auto;">
+                      @else
+                        <img src="https://source.unsplash.com/1200x400?travel" alt="" class="img-fluid" style=" display: block; max-width:540px; min-height:250px; width: auto; height: auto;">
+                      @endif
           
                       <div class="card-body">
                           <h6 class="font-weight-bold">{{ $post->title }}</h6>

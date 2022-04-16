@@ -23,7 +23,7 @@
                   <thead>
                   <tr>
                     <th>no.</th>
-                    <th>image</th>
+                    <th>thumbnail</th>
                     <th>title</th>
                     <th>slug</th>
                     <th>action</th>
@@ -34,8 +34,11 @@
                   <tr>
                     <td>{{ $index+1 }}</td>
                     <td>
-                      {{-- <img src="{{ $dt->thumbnail }}" height="150" width="150"> --}}
-                      <img src="https://source.unsplash.com/150x150?mountain" alt="" class="img-fluid">
+                      @if ($dt->image)
+                        <img src="{{ asset('storage/' . $dt->image) }}" alt="" class="img-fluid" style=" display: block; max-width:150px; max-height:150px; width: auto; height: auto;">
+                      @else
+                        <img src="https://source.unsplash.com/150x150?travel" alt="" class="img-fluid" style=" display: block; max-width:150px; min-height:150px; width: auto; height: auto;">
+                      @endif
                     </td>
                     <td>{{ $dt->title }}</td>
                     <td>{{ $dt->slug }}</td>
