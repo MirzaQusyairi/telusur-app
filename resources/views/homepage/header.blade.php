@@ -16,7 +16,6 @@
                             <nav>
                                 <ul id="navigation">                                                                                                                                     
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="#">Blog</a>
                                     </li>
                                     @auth
                                         <li><a href="#" class="p-0"><img src="{{ asset('assets/img/Sample_User_Icon.png') }}" alt="Icon User" width="40"></a>

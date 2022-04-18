@@ -9,12 +9,13 @@ use App\Models\User;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin.dashboard');
-    }
+         if(auth()->user()->role !== 'administrator'){
+            abort(403);
+        }
 
-    public function dashboard(){
         $countUsers = User::orderBy('id','DESC')->count();
         $countPosts = Post::orderBy('id','DESC')->count();
         return view('admin.dashboard', ['dataUser' => $countUsers, 'dataPost' => $countPosts]);
     }
+
 }

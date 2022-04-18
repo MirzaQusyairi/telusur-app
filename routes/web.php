@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -34,7 +35,9 @@ Route::get('/', [PostController::class, 'index'])->name('posts');
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('show');
 Route::get('/author/{author:username}', [PostController::class, 'byAuthor'])->name('posts by author');
 
-Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth')->name('Dashboard Admin');
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth')->name('Dashboard Admin');
 
 Route::get('/admin/users', [AdminUserController::class, 'index'])->name('Manage Users');
 Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('Create User');
