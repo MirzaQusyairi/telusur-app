@@ -23,6 +23,7 @@
             <link rel="stylesheet" href="{{ asset('marian/assets/css/nice-select.css') }}">
             <link rel="stylesheet" href="{{ asset('marian/assets/css/style.css') }}">
             <link rel="stylesheet" href="{{ asset('marian/assets/css/responsive.css') }}">
+            <link rel="stylesheet" href="{{ asset('lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
    </head>
 
    <body>
@@ -75,6 +76,9 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{ asset('marian/assets/js/plugins.js') }}"></script>
         <script src="{{ asset('marian/assets/js/main.js') }}"></script>
+
+        <!-- Sweet Alert 2-->
+        <script src="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
         
     </body>
 </html>

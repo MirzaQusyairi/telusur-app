@@ -53,7 +53,7 @@
                            @enderror
                          </div>
                          <div class="form-group">
-                           <p>Sudah Punya Akun? <a href="/login">Masuk disini</a></p>
+                           <p>Sudah Punya Akun? <a href="/login" style="color: blue !important">Masuk disini</a></p>
                          </div>
                          <div class="form-group">
                             <button type="submit" class="button button-contactForm btn_1 boxed-btn">Register</button>

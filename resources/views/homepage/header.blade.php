@@ -10,7 +10,7 @@
                            <a href="/"><img src="{{ asset('assets/img/logo.png') }}" alt="" width="250"></a>
                         </div>
                     </div>
-                <div class="col-xl-8 col-lg-8">
+                <div class="col-xl-10 col-lg-10">
                         <!-- main-menu -->
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
@@ -18,15 +18,40 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="#">Blog</a>
                                     </li>
+                                    @auth
+                                        <li><a href="#" class="p-0"><img src="{{ asset('assets/img/Sample_User_Icon.png') }}" alt="Icon User" width="40"></a>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <form action="/logout" method="POST">
+                                                        @csrf
+                                                        <button type="submit" class="dropdown-item">Logout</button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @else     
+                                        <li>
+                                            <a href="/login" class="btn btn1 d-none d-lg-block p-4" style="color: white">Masuk / Daftar</a>
+                                        </li>
+                                    @endauth
                                 </ul>
                             </nav>
                         </div>
                     </div>             
                     <div class="col-xl-2 col-lg-2">
                         <!-- header-btn -->
-                        <div class="header-btn">
-                            <a href="/login" class="btn btn1 d-none d-lg-block ">Masuk / Daftar</a>
-                        </div>
+                        @auth
+                        <nav>
+                            <div class="main-menu f-right d-none d-lg-block">
+                            <ul id="navigation">
+                                
+                            </ul>
+                            </div>
+                        </nav>
+                        @else 
+                            
+                        @endauth
+                        
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">

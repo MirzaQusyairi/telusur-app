@@ -23,16 +23,18 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login View');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest')->name('Register View');
+Route::post('/register', [RegisterController::class, 'store'])->name('Register ');
+
 Route::get('/', [PostController::class, 'index'])->name('posts');
-Route::get('/author/{author:username}', [PostController::class, 'byAuthor'])->name('posts by author');
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('show');
+Route::get('/author/{author:username}', [PostController::class, 'byAuthor'])->name('posts by author');
 
-Route::get('/login', [LoginController::class, 'index'])->name('Login');
-Route::get('/register', [RegisterController::class, 'index'])->name('Register');
-Route::post('/register', [RegisterController::class, 'store'])->name('Register Data User');
-
-
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('Dashboard Admin');
+Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth')->name('Dashboard Admin');
 
 Route::get('/admin/users', [AdminUserController::class, 'index'])->name('Manage Users');
 Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('Create User');

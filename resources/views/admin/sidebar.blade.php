@@ -84,9 +84,17 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
               <p>
-                Logout
+                <form action="/logout" method="POST">
+                  @csrf
+                  <button type="submit" style="background: none;
+                  color: inherit;
+                  border: none;
+                  padding: 0;
+                  font: inherit;
+                  cursor: pointer;
+                  outline: inherit;"><i class="nav-icon fas fa-power-off"></i> Logout</button>
+                </form>
               </p>
             </a>
           </li>
