@@ -35,8 +35,9 @@
 
               <div class="form-group">
                 <label for="customFile">Gambar Postingan</label>
+                <img class="img-preview img-fluid mb-3 col-sm-5">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input  @error('image') is-invalid @enderror" id="customFile" id="image" name="image">
+                  <input type="file" class="custom-file-input  @error('image') is-invalid @enderror" id="customFile" id="image" name="image" onchange="previewImage(this)">
                   <label class="custom-file-label" for="customFile">Choose file</label>
                   @error('image')
                     <div class="invalid-feedback">
@@ -77,5 +78,18 @@
         .then(response => response.json())
         .then(data => slug.value = data.slug)
     });
+
+    function previewImage(img){
+      const imgPreview = document.querySelector('.img-preview');
+
+      imgPreview.style.display='block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(img.files[0]);
+
+      oFReader.onload = function(oFREvent){
+        imgPreview.src = oFREvent.target.result; 
+      }
+    };
   </script>
 @endsection

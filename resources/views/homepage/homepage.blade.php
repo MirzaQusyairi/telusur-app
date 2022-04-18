@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-xl-3 col-lg-6 col-md-6">
+            <div class="col-lg-3 col-6">
                 <!-- Single Room -->
                 <div class="single-room mb-50">
                     <div class="room-img">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
+            <div class="col-lg-3 col-6">
                 <!-- Single Room -->
                 <div class="single-room mb-50">
                     <div class="room-img">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
+            <div class="col-lg-3 col-6">
                 <!-- Single Room -->
                 <div class="single-room mb-50">
                     <div class="room-img">
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
+            <div class="col-lg-3 col-6">
                 <!-- Single Room -->
                 <div class="single-room mb-50">
                     <div class="room-img">

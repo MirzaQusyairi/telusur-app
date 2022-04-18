@@ -88,6 +88,7 @@ class AdminPostController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
+            'image' => 'image',
             'body' => 'required'
         ];
 
@@ -97,7 +98,9 @@ class AdminPostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        $validatedData['thumbnail'] = "/img/namafilegambar.jpg";
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
         Post::where('id', $post->id)
             ->update($validatedData);
