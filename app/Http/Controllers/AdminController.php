@@ -9,7 +9,7 @@ use App\Models\User;
 class AdminController extends Controller
 {
     public function index(){
-         if(auth()->user()->role !== 'administrator'){
+        if(auth()->user()->role === 'public'){
             abort(403);
         }
 
