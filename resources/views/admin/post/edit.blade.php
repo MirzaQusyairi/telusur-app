@@ -36,6 +36,7 @@
 
               <div class="form-group">
                 <label for="customFile">Gambar Postingan</label>
+                <input type="hidden" name="oldImage" value="{{ $post->image }}">
                 @if($post->image)
                   <img src="{{ asset('storage/' . $post->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                 @else
