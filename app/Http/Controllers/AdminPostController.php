@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class AdminPostController extends Controller
 {
@@ -48,7 +50,7 @@ class AdminPostController extends Controller
             $validatedData['image'] = $request->file('image')->store('post-images');
         }
 
-        $validatedData['user_id'] = 2;
+        $validatedData['user_id'] = auth()->user()->id;
 
         Post::create($validatedData);
 
@@ -88,6 +90,7 @@ class AdminPostController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
+            'image' => 'image',
             'body' => 'required'
         ];
 
@@ -97,7 +100,12 @@ class AdminPostController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        $validatedData['thumbnail'] = "/img/namafilegambar.jpg";
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
         Post::where('id', $post->id)
             ->update($validatedData);
@@ -113,7 +121,12 @@ class AdminPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if($post->image){
+            Storage::delete($post->image);
+        }
+
         Post::destroy($post->id);
+        Comment::where('post_id',$post->id)->delete();
 
         return redirect('/admin/posts')->with('success', 'Post has been deleted');
     }

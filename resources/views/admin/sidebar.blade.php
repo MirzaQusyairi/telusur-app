@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/admin" class="brand-link">
       {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
       <span class="brand-text font-weight-light">DASHBOARD TELUSUR</span>
     </a>
@@ -14,7 +14,7 @@
           <img src="{{ asset('assets/img/Sample_User_Icon_2.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Mirza</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -84,9 +84,17 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
               <p>
-                Logout
+                <form action="/logout" method="POST">
+                  @csrf
+                  <button type="submit" style="background: none;
+                  color: inherit;
+                  border: none;
+                  padding: 0;
+                  font: inherit;
+                  cursor: pointer;
+                  outline: inherit;"><i class="nav-icon fas fa-power-off"></i> Logout</button>
+                </form>
               </p>
             </a>
           </li>
