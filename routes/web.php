@@ -42,6 +42,8 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware('auth')->nam
 Route::get('/admin/users', [AdminUserController::class, 'index'])->name('Manage Users');
 Route::get('/admin/users/create', [AdminUserController::class, 'create'])->name('Create User');
 Route::post('/admin/users/create', [AdminUserController::class, 'store'])->name('Store Data User');
+Route::get('/admin/users/{user}/edit', [AdminUserController::class, 'edit'])->name('View Edit Data User');
+Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])->name('Update Data User');
 Route::delete('/admin/users/{id}', [AdminUserController::class, 'destroy'])->name('Delete Data User');
 
 Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);

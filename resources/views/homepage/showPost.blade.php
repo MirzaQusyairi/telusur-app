@@ -20,7 +20,7 @@
                 <div class="blog_details">
                    <h2>{{ $post->title }}</h2>
                    <ul class="blog-info-link mt-3 mb-4">
-                      <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->username }}</a></li>
+                      <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->name }} | {{ date('d F Y', strtotime($post->created_at)); }}</a></li>
                       {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                    </ul>
                    <article class="my-3 text-justify">
@@ -46,7 +46,12 @@
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#"> {{ $comment->user->name}}</a>
+                                       <a href="#"> 
+                                          {{ $comment->user->name}}
+                                          @if($comment->user->role === 'administrator')
+                                             <span>(admin)</span>
+                                          @endif
+                                       </a>
                                     </h5>
                                     {{-- <p class="date">December 4, 2017 at 3:12 pm </p> --}}
                                  </div>

@@ -41,7 +41,7 @@
                     <td>{{ $dt->phone }}</td>
                     <td>{{ $dt->role }}</td>
                     <td>
-                        <button type="button" class="btn btn-warning"><i class="fa fa-pen"></i></button>
+                        <a href="/admin/users/{{ $dt->id }}/edit" class="btn btn-warning"><i class="fa fa-pen"></i></a>
                         <form action="/admin/users/{{ $dt->id }}" method="POST" class="d-inline">
                           @method('DELETE')
                           @csrf

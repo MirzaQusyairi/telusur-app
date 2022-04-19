@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -125,6 +126,7 @@ class AdminPostController extends Controller
         }
 
         Post::destroy($post->id);
+        Comment::where('post_id',$post->id)->delete();
 
         return redirect('/admin/posts')->with('success', 'Post has been deleted');
     }

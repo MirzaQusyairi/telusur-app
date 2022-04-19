@@ -141,13 +141,13 @@
                             </a>
                         </div>
                         <div class="blog-caption">
-                            <div class="blog-cap-top d-flex justify-content-between mb-40">
-                                <span>blog</span>
-                                <ul><li>by<a href="#"> {{ $post->author->name }}</a></li></ul>
-                            </div>
+                            
                             <div class="blog-cap-mid">
                                 <p><a href="{{ route('show', $post->slug )}}">{{ $post->title }}</a></p>
                                 <p class="text-justify">{!! Str::limit(strip_tags($post->body), 150, '...') !!}</p>
+                            </div>
+                            <div class="blog-cap-top d-flex justify-content-between mb-10 mt-40">
+                                <ul><li><i class="fa fa-user mr-2"></i> <a href="#">{{ $post->author->name }}</a></li></ul>
                             </div>
                             <!-- Comments -->
                             {{-- <div class="blog-cap-bottom d-flex justify-content-between">
