@@ -141,19 +141,18 @@
                             </a>
                         </div>
                         <div class="blog-caption">
-                            <div class="blog-cap-top d-flex justify-content-between mb-40">
-                                <span>blog</span>
-                                <ul><li>by<a href="#"> {{ $post->author->name }}</a></li></ul>
-                            </div>
+                            
                             <div class="blog-cap-mid">
                                 <p><a href="{{ route('show', $post->slug )}}">{{ $post->title }}</a></p>
+                                
                                 <p class="text-justify">{!! Str::limit(strip_tags($post->body), 150, '...') !!}</p>
+                                <div class="blog-cap-top d-flex justify-content-between mb-40">
+                                
+                                <ul><li>by &nbsp;<a href="#"> {{ $post->author->name }}</a></li></ul>
                             </div>
-                            <!-- Comments -->
-                            {{-- <div class="blog-cap-bottom d-flex justify-content-between">
-                                <span>Feb 28, 2020</span>
-                                <span><img src="{{ asset('marian/assets/img/our_blog/blog-comments-icon.jpg') }}" alt="">3</span>
-                            </div> --}}
+                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>
