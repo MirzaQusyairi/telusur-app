@@ -12,19 +12,19 @@
 
 		<!-- CSS here -->
             <!-- use 'asset' when local and 'public_asset' when deploy -->
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/owl.carousel.min.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/gijgo.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/slicknav.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/animate.min.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/magnific-popup.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/fontawesome-all.min.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/themify-icons.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/slick.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/nice-select.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/style.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('marian/assets/css/responsive.css') }}">
-            <link rel="stylesheet" href="{{ public_asset('lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/owl.carousel.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/gijgo.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/slicknav.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/animate.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/magnific-popup.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/fontawesome-all.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/themify-icons.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/slick.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/nice-select.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('marian/assets/css/responsive.css') }}">
+            <link rel="stylesheet" href="{{ asset('lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
    </head>
 
    <body>
@@ -43,43 +43,43 @@
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->
-        <script src="{{ public_asset('marian/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 		
 		<!-- Jquery, Popper, Bootstrap -->
-		<script src="{{ public_asset('marian/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/popper.min.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('marian/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/bootstrap.min.js') }}"></script>
 	    <!-- Jquery Mobile Menu -->
-        <script src="{{ public_asset('marian/assets/js/jquery.slicknav.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.slicknav.min.js') }}"></script>
 
 		<!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="{{ public_asset('marian/assets/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/slick.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/slick.min.js') }}"></script>
         <!-- Date Picker -->
-        <script src="{{ public_asset('marian/assets/js/gijgo.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/gijgo.min.js') }}"></script>
 		<!-- One Page, Animated-HeadLin -->
-        <script src="{{ public_asset('marian/assets/js/wow.min.js') }}"></script>
-		<script src="{{ public_asset('marian/assets/js/animated.headline.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/jquery.magnific-popup.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/wow.min.js') }}"></script>
+		<script src="{{ asset('marian/assets/js/animated.headline.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.magnific-popup.js') }}"></script>
 
 		<!-- Scrollup, nice-select, sticky -->
-        <script src="{{ public_asset('marian/assets/js/jquery.scrollUp.min.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/jquery.nice-select.min.js') }}"></script>
-		<script src="{{ public_asset('marian/assets/js/jquery.sticky.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.scrollUp.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.nice-select.min.js') }}"></script>
+		<script src="{{ asset('marian/assets/js/jquery.sticky.js') }}"></script>
         
         <!-- contact js -->
-        <script src="{{ public_asset('marian/assets/js/contact.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/jquery.form.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/jquery.validate.min.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/mail-script.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/contact.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.form.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/mail-script.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/jquery.ajaxchimp.min.js') }}"></script>
         
 		<!-- Jquery Plugins, main Jquery -->	
-        <script src="{{ public_asset('marian/assets/js/plugins.js') }}"></script>
-        <script src="{{ public_asset('marian/assets/js/main.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/plugins.js') }}"></script>
+        <script src="{{ asset('marian/assets/js/main.js') }}"></script>
 
         <!-- Sweet Alert 2-->
-        <script src="{{ public_asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
         
     </body>
 </html>
