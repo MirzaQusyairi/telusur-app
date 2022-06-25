@@ -44,4 +44,3 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //add comment 
     Route::post('/comment/post/{id_post}', [CommentController::class, 'addComment']);
 });
-

@@ -12,7 +12,6 @@ class PostController extends Controller
         $data = Post::join('users', 'posts.user_id', '=', 'users.id')
                     ->get(['users.name as author', 'posts.*'])
                     ->makeHidden(['user_id']);
-        
         if ($data) {
             return response()->json([
                 'status' => true,

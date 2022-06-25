@@ -26,10 +26,9 @@
                    <article class="my-3 text-justify">
                      {!! $post->body !!}
                    </article>
-                   
+
                 </div>
              </div>
-             
              @include('homepage.comments')
 
              <div class="comment-form">
@@ -56,4 +55,4 @@
  </section>
  <!--================ Blog Area end =================-->
 
-@endsection
+@endsection 

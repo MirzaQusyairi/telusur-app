@@ -24,4 +24,4 @@ class CheckRole
             'message' => 'Unauthorized,please contact administrator!'
         ], 401);
     }
-}
+} 
