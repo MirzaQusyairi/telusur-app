@@ -10,6 +10,7 @@ class PostController extends Controller
 {
     public function allPost(Request $request){
         $data = Post::join('users', 'posts.user_id', '=', 'users.id')
+                    ->orderBy('posts.id', 'DESC')
                     ->get(['users.name as author', 'posts.*'])
                     ->makeHidden(['user_id']);
 
