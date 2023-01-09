@@ -66,14 +66,16 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('Manage Users') }}" class="nav-link {{ Request::is('admin/users*') ? 'active':'' }}">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                User
-              </p>
-            </a>
-          </li>
+          @if (auth()->user()->role == 'administrator')
+            <li class="nav-item">
+              <a href="{{ route('Manage Users') }}" class="nav-link {{ Request::is('admin/users*') ? 'active':'' }}">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  User
+                </p>
+              </a>
+            </li>
+          @endif
           <li class="nav-item">
             <a href="/admin/posts" class="nav-link {{ Request::is('admin/posts*') ? 'active':'' }}">
               <i class="nav-icon fas fa-copy"></i>
