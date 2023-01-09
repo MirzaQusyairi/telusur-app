@@ -17,8 +17,13 @@ class AdminPostController extends Controller
      */
     public function index()
     {
-        $data = Post::orderBy('id','DESC')->get();
-        return view('admin.post.index', ['data' => $data]);
+        if(auth()->user()->role == 'administrator'){
+            $data = Post::orderBy('id','DESC')->get();
+            return view('admin.post.index', ['data' => $data]);
+        } else {
+            $data = Post::where('user_id', auth()->user()->id)->orderBy('id','DESC')->get();
+            return view('admin.post.index', ['data' => $data]);
+        }
     }
 
     /**

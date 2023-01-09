@@ -47,4 +47,4 @@ Route::put('/admin/users/{user}', [AdminUserController::class, 'update'])->name(
 Route::delete('/admin/users/{id}', [AdminUserController::class, 'destroy'])->name('Delete Data User');
 
 Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
-Route::resource('/admin/posts', AdminPostController::class);
+Route::resource('/admin/posts', AdminPostController::class)->middleware('auth');
