@@ -22,13 +22,13 @@
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>no.</th>
-                    <th>name</th>
-                    <th>username</th>
-                    <th>email</th>
-                    <th>phone</th>
-                    <th>role</th>
-                    <th>action</th>
+                    <th class="all">no.</th>
+                    <th class="all">name</th>
+                    <th class="all">username</th>
+                    <th class="all">email</th>
+                    <th class="all">phone</th>
+                    <th class="all">role</th>
+                    <th class="all">action</th>
                   </tr>
                   </thead>
                   <tbody>
