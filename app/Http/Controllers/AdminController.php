@@ -13,9 +13,14 @@ class AdminController extends Controller
             abort(403);
         }
 
-        $countUsers = User::orderBy('id','DESC')->count();
-        $countPosts = Post::orderBy('id','DESC')->count();
-        return view('admin.dashboard', ['dataUser' => $countUsers, 'dataPost' => $countPosts]);
+        if(auth()->user()->role === 'administrator'){
+            $countUsers = User::orderBy('id','DESC')->count();
+            $countPosts = Post::orderBy('id','DESC')->count();
+            return view('admin.dashboard', ['dataUser' => $countUsers, 'dataPost' => $countPosts]);
+        } else {
+            $countPosts = Post::where('user_id', auth()->user()->id)->orderBy('id','DESC')->count();
+            return view('admin.dashboard', ['dataPost' => $countPosts]);
+        }
     }
 
 }

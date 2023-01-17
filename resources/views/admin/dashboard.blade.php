@@ -4,21 +4,23 @@
 @section('content')
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        <div class="col-lg-3 col-6">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>{{ $dataUser }}</h3>
+        @if (auth()->user()->role == 'administrator')
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $dataUser }}</h3>
 
-              <p>User Registrations</p>
+                <p>User Registrations</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
-        </div>
-        <!-- ./col -->
+          <!-- ./col -->
+        @endif
         <div class="col-lg-3 col-6">
           <!-- small box -->
           <div class="small-box bg-success">

@@ -22,11 +22,11 @@
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>no.</th>
-                    <th>thumbnail</th>
-                    <th>title</th>
-                    <th>slug</th>
-                    <th>action</th>
+                    <th class="all">no.</th>
+                    <th class="all">thumbnail</th>
+                    <th class="all">title</th>
+                    <th class="all">slug</th>
+                    <th class="all">action</th>
                   </tr>
                   </thead>
                   <tbody>

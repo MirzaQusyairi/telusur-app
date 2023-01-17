@@ -1,0 +1,7 @@
+div.dataTables_wrapper .row:nth-child(2) .col-sm-12{
+    overflow-x: auto;
+}
+
+div.dataTables_wrapper .row:nth-child(2) .col-sm-12 table{
+    width: 900px;
+}
